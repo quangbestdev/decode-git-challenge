@@ -17,6 +17,12 @@ describe('server', () => {
       done();
     });
   });
+  it('reverses', done => {
+    jsonist.get(urlBase + '/reverse/hello', (_, body) => {
+      expect(body.msg).toEqual('olleh');
+      done();
+    });
+  });
 
   afterAll(async () => {
     server.close();
